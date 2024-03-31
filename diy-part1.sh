@@ -10,6 +10,20 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
+# add luci-app-daed
+git clone https://github.com/sbwml/luci-app-daed-next
+
+# Add luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+
+# Add luci-app-poweroff
+git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
+
+# Add luci-app-autoipsetadder
+git clone --depth=1 https://github.com/waynesg/luci-app-autoipsetadder
+
 # Uncomment a feed source
 # Add a feed source
 sed -i "/helloworld/d" "feeds.conf.default"
@@ -18,7 +32,6 @@ echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-pa
 echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
 
 # Add a feed source
-
 mkdir -p files/usr/share
 mkdir -p files/etc/
 touch files/etc/lenyu_version
